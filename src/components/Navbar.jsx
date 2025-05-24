@@ -1,144 +1,175 @@
 import React, { useState, useEffect } from "react";
+import { FaSearch } from "react-icons/fa";
 
 const navLinks = [
   { name: "Home", path: "/" },
-  { name: "Products", path: "/" },
-  { name: "Contact", path: "/" },
-  { name: "About", path: "/" },
+  { name: "Latest Jobs", path: "/latest-jobs" },
+  { name: "Admit Cards", path: "/admit-cards" },
+  { name: "Results", path: "/results" },
+  { name: "Exam Calendar", path: "/exam-calendar" },
+  { name: "Preparation Tips", path: "/preparation-tips" },
+  { name: "About Us", path: "/about" },
 ];
 
-// Accept onMenuClick and isMenuOpen as props
-const Navbar = ({ onMenuClick, isMenuOpen, setIsMenuOpen }) => {
+// White logo for dark background
+const logoUrl =
+  "https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/dummyLogo/dummyLogoWhite.svg";
+
+// Dark logo for light background (on scroll)
+const logoUrlScrolled =
+  "https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/dummyLogo/dummyLogoBlack.svg";
+
+const Sidebar = ({ sidebarOpen, setSidebarOpen }) => (
+  <>
+    <div
+      className={`fixed top-0 left-0 bottom-0 w-64 bg-white shadow-lg z-50 transform transition-transform duration-300 ease-in-out
+      ${sidebarOpen ? "translate-x-0" : "-translate-x-full"} lg:hidden`}
+      aria-label="Sidebar"
+    >
+      <div className="flex items-center justify-between p-4 border-b border-gray-200">
+        <a href="/">
+          <img src={logoUrlScrolled} alt="logo" className="h-8" />
+        </a>
+        <button
+          onClick={() => setSidebarOpen(false)}
+          aria-label="Close sidebar"
+          className="text-gray-700 hover:text-purple-700 focus:outline-none"
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <nav className="flex flex-col p-4 space-y-3 text-gray-700">
+        {navLinks.map((link) => (
+          <a
+            key={link.name}
+            href={link.path}
+            className="block py-2 px-3 rounded hover:bg-purple-100 text-purple-800 font-semibold"
+            onClick={() => setSidebarOpen(false)}
+          >
+            {link.name}
+          </a>
+        ))}
+      </nav>
+    </div>
+    {sidebarOpen && (
+      <div
+        onClick={() => setSidebarOpen(false)}
+        className="fixed inset-0 bg-black bg-opacity-40 z-40 lg:hidden"
+        aria-hidden="true"
+      />
+    )}
+  </>
+);
+
+export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
-  // Remove local isMenuOpen state
-  // const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     const onScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 30);
     };
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    alert(`Searching for: ${searchTerm}`);
+  };
+
   return (
     <>
+      <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+
       <nav
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-          isScrolled ? "bg-white shadow-md py-3" : "py-6"
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 flex items-center ${
+          isScrolled
+            ? "bg-white shadow-md py-2"
+            : "bg-gradient-to-r from-purple-800 to-purple-600 py-4"
         }`}
-        style={{
-          background: isScrolled
-            ? "white"
-            : "linear-gradient(90deg, #5B2C6F 0%, #8E44AD 100%)",
-        }}
       >
-        <div className="container mx-auto flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32">
-          {/* Logo */}
-          <a href="/" className="flex items-center gap-2">
+        <div className="container mx-auto px-4 flex items-center justify-between">
+          {/* Left: Logo */}
+          <a href="/" className="flex items-center space-x-2">
             <img
-              src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/dummyLogo/dummyLogoWhite.svg"
+              src={isScrolled ? logoUrlScrolled : logoUrl}
               alt="logo"
-              className={`h-9 transition-all duration-300 ${
-                isScrolled ? "invert" : ""
-              }`}
+              className="h-8"
             />
+            <span
+              className={`font-bold text-lg ${
+                isScrolled ? "text-gray-800" : "text-white"
+              }`}
+            >
+              Home
+            </span>
           </a>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-10 font-semibold">
-            {navLinks.map((link, i) => (
+          {/* Desktop Nav Links */}
+          <div className="hidden lg:flex space-x-6">
+            {navLinks.map((link) => (
               <a
-                key={i}
+                key={link.name}
                 href={link.path}
-                className={`relative transition-colors duration-300 ${
-                  isScrolled
-                    ? "text-purple-700 hover:text-purple-900"
-                    : "text-gray-200 hover:text-pink-300"
+                className={`font-semibold ${
+                  isScrolled ? "text-gray-800 hover:text-purple-700" : "text-white hover:text-purple-300"
                 }`}
               >
                 {link.name}
-                <span className="absolute bottom-0 left-0 h-0.5 bg-current w-0 group-hover:w-full transition-all duration-300" />
               </a>
             ))}
-
-            <button
-              className={`px-5 py-1 rounded-full font-light border-2 transition-colors duration-300 ${
-                isScrolled
-                  ? "border-purple-700 text-purple-700 hover:bg-purple-700 hover:text-white"
-                  : "border-gray-200 text-gray-200 hover:bg-pink-300 hover:text-purple-900"
-              }`}
-            >
-              New Launch
-            </button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={onMenuClick}  // Use passed handler instead of local setState
-              aria-label="Toggle menu"
-              className={`focus:outline-none ${
-                isScrolled ? "text-purple-700" : "text-gray-200"
+          {/* Search box with icon inside input */}
+          <form onSubmit={handleSearchSubmit} className="relative w-64 hidden lg:block">
+            <input
+              type="text"
+              placeholder="Search..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className={`w-full rounded-md border border-gray-300 py-2 pr-10 pl-3 focus:outline-none focus:ring-2 focus:ring-purple-500 ${
+                isScrolled ? "text-gray-800 bg-white placeholder-gray-500" : "text-white bg-purple-700 placeholder-purple-300"
               }`}
+            />
+            <button
+              type="submit"
+              className="absolute right-2 top-1/2 transform -translate-y-1/2 text-purple-600 hover:text-purple-800 focus:outline-none"
+              aria-label="Search"
             >
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-              >
-                <line x1="4" y1="6" x2="20" y2="6" />
-                <line x1="4" y1="12" x2="20" y2="12" />
-                <line x1="4" y1="18" x2="20" y2="18" />
-              </svg>
+              <FaSearch />
             </button>
-          </div>
-        </div>
+          </form>
 
-        {/* Mobile Menu */}
-        <div
-          className={`fixed top-0 left-0 w-full h-screen bg-white text-purple-700 flex flex-col items-center justify-center gap-6 font-semibold text-lg transition-transform duration-300 md:hidden ${
-            isMenuOpen ? "translate-x-0" : "-translate-x-full"
-          }`}
-        >
+          {/* Mobile hamburger */}
           <button
-            className="absolute top-5 right-5 text-purple-700"
-            onClick={() => setIsMenuOpen(false)}  // Use passed setter
-            aria-label="Close menu"
+            onClick={() => setSidebarOpen(true)}
+            className={`lg:hidden focus:outline-none ml-4 ${
+              isScrolled ? "text-gray-800" : "text-white"
+            }`}
+            aria-label="Open sidebar"
           >
             <svg
-              className="h-6 w-6"
+              className="w-6 h-6"
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
               viewBox="0 0 24 24"
             >
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
-          </button>
-          {navLinks.map((link, i) => (
-            <a
-              key={i}
-              href={link.path}
-              onClick={() => setIsMenuOpen(false)}  // Close menu on link click
-              className="hover:text-pink-300 transition-colors duration-300"
-            >
-              {link.name}
-            </a>
-          ))}
-          <button className="border border-purple-700 px-6 py-1 rounded-full font-light cursor-pointer hover:bg-purple-700 hover:text-white transition-colors duration-300">
-            New Launch
           </button>
         </div>
       </nav>
-
-      {/* Padding so content doesn't go under navbar */}
-      <div className={`${isScrolled ? "pt-16" : "pt-24"}`} />
     </>
   );
-};
-
-export default Navbar;
+}

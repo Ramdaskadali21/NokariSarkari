@@ -1,44 +1,52 @@
-import React, { useState } from 'react';          // Add useState 
+import React from 'react';
 import Navbar from './components/Navbar';
-import Sidebar from './components/sidebar';      // Adjust path as needed
+import FooterLinks from './components/FooterLinks';
+
 import './index.css';
 
 function App() {
-  const [sidebarOpen, setSidebarOpen] = useState(false);  // Sidebar open state
-
-  const toggleSidebar = () => {
-    setSidebarOpen(prev => !prev);
-  };
-
-  const closeSidebar = () => {
-    setSidebarOpen(false);
-  };
-
   return (
     <>
-      {/* Pass toggleSidebar handler to Navbar */}
-      <Navbar onMenuClick={toggleSidebar} />
+      <Navbar />
 
-      <div className="flex">
-        {/* Pass isOpen and onClose props to Sidebar */}
-        <Sidebar isOpen={sidebarOpen} onClose={closeSidebar} />
+      {/* Add top padding equal or greater than navbar height (e.g., 72px) */}
+      <main className="pt-20 max-w-7xl mx-auto p-4">
+        <h1 className="text-3xl font-bold mb-6">Welcome to NokariSarkari</h1>
+        
+        <p className="mb-4 text-gray-700">
+          Design a professional website footer with Tailwind CSS featuring essential elements like social media links, copyright notices,
+          and additional navigation that supports your overall site structure.
+        </p>
 
-        <main className="flex-1 container mx-auto p-4">
-          {/* Content that scrolls */}
-          <h1 className="text-3xl font-bold">Welcome to your site!</h1>
-          <p>Scroll down to see the navbar shrink and change style.</p>
-          <div style={{ height: '1500px' }}></div> {/* Just to enable scroll */}
-        </main>
-      </div>
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-3">Footer Examples</h2>
+          <ul className="list-disc list-inside text-gray-600">
+            <li>Modern Footer</li>
+            <li>Company Footer</li>
+            <li>Newsletter Footer</li>
+            <li>Feature-Rich UI Library - Tailwind CSS Components</li>
+          </ul>
+        </section>
 
-      {/* Optional overlay when sidebar is open */}
-      {sidebarOpen && (
-        <div
-          className="fixed inset-0 bg-black opacity-50 z-40"
-          onClick={closeSidebar}
-          aria-hidden="true"
-        />
-      )}
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-3">Ready-to-use UI Elements</h2>
+          <p className="text-gray-700">
+            Beautifully Designed, and Fully Customizable UI Elements for Every Project.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-3">Website Links</h2>
+          <ul className="list-disc list-inside text-gray-600">
+            <li>Home</li>
+            <li>Components</li>
+            <li>Docs</li>
+            <li>Privacy Policy</li>
+          </ul>
+        </section>
+      </main>
+
+      <FooterLinks />
     </>
   );
 }
