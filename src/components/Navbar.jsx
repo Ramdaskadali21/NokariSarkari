@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaSearch, FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -60,7 +61,7 @@ const Navbar = () => {
     setFilteredLinks([]);
   };
 
-  const iPadLinks = navLinks.filter(link =>
+  const iPadLinks = navLinks.filter((link) =>
     ["Home", "Latest Jobs", "Admit Cards", "Results"].includes(link.name)
   );
 
@@ -68,37 +69,31 @@ const Navbar = () => {
     <>
       <header
         className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
-            scrolled
-  ?             "bg-gradient-to-r from-[#10d8df] to-[#03183b] text-white"
-  :              "bg-gradient-to-r from-[#03183b] to-[#10d8df] text-white"
-
- 
-
-
+          scrolled
+            ? "bg-gradient-to-r from-[#10d8df] to-[#03183b] text-white"
+            : "bg-gradient-to-r from-[#03183b] to-[#10d8df] text-white"
         }`}
       >
         <nav className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
-          <a href="/" className="flex-shrink-0">
+          <Link to="/" className="flex-shrink-0">
             <img
               src={scrolled ? logoUrlScrolled : logoUrl}
               alt="Logo"
               className="h-8 sm:h-10"
             />
-          </a>
+          </Link>
 
           <div className="hidden md:flex lg:hidden items-center gap-4">
             <ul className="flex space-x-4">
               {iPadLinks.map(({ name, path }) => (
                 <li key={name}>
-                  <a
-                    href={path}
+                  <Link
+                    to={path}
                     onClick={handleNavClick}
-                    className={`text-sm font-medium ${
-                      scrolled ? "text-white" : "text-white"
-                    } hover:text-yellow-500 transition`}
+                    className="text-sm font-medium text-white hover:text-yellow-500 transition"
                   >
                     {name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -125,13 +120,13 @@ const Navbar = () => {
                 <ul className="absolute z-50 mt-1 w-full bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-auto">
                   {filteredLinks.map(({ name, path }) => (
                     <li key={name}>
-                      <a
-                        href={path}
+                      <Link
+                        to={path}
                         onClick={handleSearchSelect}
                         className="block px-4 py-2 hover:bg-blue-100 text-gray-800"
                       >
                         {name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -143,15 +138,13 @@ const Navbar = () => {
             <ul className="flex space-x-6">
               {navLinks.map(({ name, path }) => (
                 <li key={name}>
-                  <a
-                    href={path}
+                  <Link
+                    to={path}
                     onClick={handleNavClick}
-                    className={`text-sm font-medium ${
-                      scrolled ? "text-white" : "text-white"
-                    } hover:text-yellow-500 transition`}
+                    className="text-sm font-medium text-white hover:text-yellow-500 transition"
                   >
                     {name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -178,13 +171,13 @@ const Navbar = () => {
                 <ul className="absolute z-50 mt-1 w-full bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-auto">
                   {filteredLinks.map(({ name, path }) => (
                     <li key={name}>
-                      <a
-                        href={path}
+                      <Link
+                        to={path}
                         onClick={handleSearchSelect}
                         className="block px-4 py-2 hover:bg-blue-100 text-gray-800"
                       >
                         {name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -225,8 +218,8 @@ const Navbar = () => {
                   <ul className="absolute mt-1 w-full bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-auto z-50">
                     {filteredLinks.map(({ name, path }) => (
                       <li key={name}>
-                        <a
-                          href={path}
+                        <Link
+                          to={path}
                           onClick={() => {
                             handleNavClick();
                             handleSearchSelect();
@@ -234,7 +227,7 @@ const Navbar = () => {
                           className="block px-4 py-2 hover:bg-blue-100 text-gray-800"
                         >
                           {name}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -245,13 +238,13 @@ const Navbar = () => {
                 <ul className="space-y-4">
                   {navLinks.map(({ name, path }) => (
                     <li key={name}>
-                      <a
-                        href={path}
+                      <Link
+                        to={path}
                         onClick={handleNavClick}
                         className="block text-lg font-medium text-gray-900 hover:text-blue-600"
                       >
                         {name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -268,3 +261,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+export { navLinks };

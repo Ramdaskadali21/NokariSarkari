@@ -1,50 +1,73 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';  // <-- import BrowserRouter
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 import Navbar from './components/Navbar';
 import FooterLinks from './components/FooterLinks';
+import ScrollToTop from './components/ScrollToTop';
 
 import './index.css';
 
+// Page imports
+import Home from './pages/Home';
+import LatestJobs from './pages/LatestJobs';
+import AdmitCards from './pages/AdmitCards';
+import Results from './pages/Results';
+import ExamCalendar from './pages/ExamCalendar';
+import PreparationTips from './pages/PreparationTips';
+import AboutUs from './pages/AboutUs';
+
+// New page imports
+import UpcomingExams from './pages/UpcomingExams';
+import Notifications from './pages/Notifications';
+import Syllabus from './pages/Syllabus';
+import PreviousPapers from './pages/PreviousPapers';
+import InterviewTips from './pages/InterviewTips';
+import HowToApply from './pages/HowToApply';
+import Contact from './pages/Contact';
+import FAQs from './pages/FAQs';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import Terms from './pages/Terms';
+import RefundPolicy from './pages/RefundPolicy';
+
 function App() {
   return (
-    <BrowserRouter>   {/* <-- wrap your app in BrowserRouter */}
+    <BrowserRouter>
+      <ScrollToTop />
       <Navbar />
+      
+      <main className="max-w-7xl mx-auto p-4 min-h-[70vh]">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/latest-jobs" element={<LatestJobs />} />
+          <Route path="/admit-cards" element={<AdmitCards />} />
+          <Route path="/results" element={<Results />} />
+          <Route path="/exam-calendar" element={<ExamCalendar />} />
+          <Route path="/preparation-tips" element={<PreparationTips />} />
+          <Route path="/about" element={<AboutUs />} />
 
-      {/* Add top padding equal or greater than navbar height (e.g., 72px) */}
-      <main className="pt-20 max-w-7xl mx-auto p-4">
-        <h1 className="text-3xl font-bold mb-6">Ramdas Welcome to NokariSarkari</h1>
-        
-        <p className="mb-4 text-gray-700">
-          Design a professional website footer with Tailwind CSS featuring essential elements like social media links, copyright notices,
-          and additional navigation that supports your overall site structure.
-        </p>
+          {/* New Routes */}
+          <Route path="/upcoming-exams" element={<UpcomingExams />} />
+          <Route path="/notifications" element={<Notifications />} />
+          <Route path="/syllabus" element={<Syllabus />} />
+          <Route path="/previous-papers" element={<PreviousPapers />} />
+          <Route path="/interview-tips" element={<InterviewTips />} />
+          <Route path="/how-to-apply" element={<HowToApply />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/faqs" element={<FAQs />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/refund-policy" element={<RefundPolicy />} />
 
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-3">Footer Examples</h2>
-          <ul className="list-disc list-inside text-gray-600">
-            <li>Modern Footer</li>
-            <li>Company Footer</li>
-            <li>Newsletter Footer</li>
-            <li>Feature-Rich UI Library - Tailwind CSS Components</li>
-          </ul>
-        </section>
-
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-3">Ready-to-use UI Elements</h2>
-          <p className="text-gray-700">
-            Beautifully Designed, and Fully Customizable UI Elements for Every Project.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold mb-3">Website Links</h2>
-          <ul className="list-disc list-inside text-gray-600">
-            <li>Home</li>
-            <li>Components</li>
-            <li>Docs</li>
-            <li>Privacy Policy</li>
-          </ul>
-        </section>
+          <Route
+            path="*"
+            element={
+              <div className="text-center text-gray-600">
+                <h2 className="text-2xl font-semibold mb-4">Page Not Found</h2>
+                <p>Sorry, this page does not exist.</p>
+              </div>
+            }
+          />
+        </Routes>
       </main>
 
       <FooterLinks />
