@@ -12,7 +12,7 @@ function App() {
 
       {/* Add top padding equal or greater than navbar height (e.g., 72px) */}
       <main className="pt-20 max-w-7xl mx-auto p-4">
-        <h1 className="text-3xl font-bold mb-6">Welcome to NokariSarkari</h1>
+        <h1 className="text-3xl font-bold mb-6">Ramdas Welcome to NokariSarkari</h1>
         
         <p className="mb-4 text-gray-700">
           Design a professional website footer with Tailwind CSS featuring essential elements like social media links, copyright notices,
