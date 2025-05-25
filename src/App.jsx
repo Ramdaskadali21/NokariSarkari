@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';  // <-- import BrowserRouter
 import Navbar from './components/Navbar';
 import FooterLinks from './components/FooterLinks';
 
@@ -6,7 +7,7 @@ import './index.css';
 
 function App() {
   return (
-    <>
+    <BrowserRouter>   {/* <-- wrap your app in BrowserRouter */}
       <Navbar />
 
       {/* Add top padding equal or greater than navbar height (e.g., 72px) */}
@@ -47,7 +48,7 @@ function App() {
       </main>
 
       <FooterLinks />
-    </>
+    </BrowserRouter>
   );
 }
 
