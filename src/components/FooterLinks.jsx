@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";  // <-- Import Link here
 import {
   FaFacebookF,
   FaInstagram,
@@ -56,8 +56,7 @@ const Footer = () => {
             NokariSarkari
           </h2>
           <p className="text-gray-400 text-sm leading-relaxed">
-            Your trusted source for latest government jobs, exam alerts, admit
-            cards, and results across India.
+            Your trusted source for latest government jobs, exam alerts, admit cards, and results across India.
           </p>
 
           {/* Contact Info */}
@@ -70,10 +69,7 @@ const Footer = () => {
             </p>
             <p>
               <strong>Email:</strong>{" "}
-              <a
-                href="mailto:info@sarkarijobportal.com"
-                className="hover:text-yellow-400"
-              >
+              <a href="mailto:info@sarkarijobportal.com" className="hover:text-yellow-400">
                 info@NokariSarkari.com
               </a>
             </p>
@@ -86,9 +82,7 @@ const Footer = () => {
         {/* Link Sections */}
         {linkSections.map((section, idx) => (
           <div key={idx}>
-            <h3 className="text-lg font-semibold mb-4 text-white">
-              {section.title}
-            </h3>
+            <h3 className="text-lg font-semibold mb-4 text-white">{section.title}</h3>
             <ul className="space-y-3">
               {section.links.map((link, i) => (
                 <li key={i}>
@@ -108,7 +102,51 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold mb-4 text-white">Follow Us</h3>
           <div className="flex space-x-5 text-gray-400">
-            {/* Social links unchanged */}
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="hover:text-pink-500 transition"
+            >
+              <FaInstagram size={24} />
+            </a>
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="hover:text-blue-600 transition"
+            >
+              <FaFacebookF size={24} />
+            </a>
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+              className="hover:text-sky-400 transition"
+            >
+              <FaTwitter size={24} />
+            </a>
+            <a
+              href="https://youtube.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+              className="hover:text-red-600 transition"
+            >
+              <FaYoutube size={24} />
+            </a>
+            <a
+              href="https://wa.me/911234567890"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+              className="hover:text-green-600 transition"
+            >
+              <FaWhatsapp size={24} />
+            </a>
           </div>
         </div>
       </div>
