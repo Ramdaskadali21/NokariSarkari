@@ -21,7 +21,7 @@ import Syllabus from './pages/Syllabus';
 import PreviousPapers from './pages/PreviousPapers';
 import InterviewTips from './pages/InterviewTips';
 import HowToApply from './pages/HowToApply';
-import Contact from './pages/Contact';
+import ContactUs from './pages/ContactUs';
 import FAQs from './pages/FAQs';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Terms from './pages/Terms';
@@ -29,7 +29,8 @@ import RefundPolicy from './pages/RefundPolicy';
 
 function App() {
   return (
-    <div className="relative min-h-screen bg-gradient-to-r from-pink-400 via-yellow-300 via-green-300 to-blue-500 overflow-hidden">
+    <div className="relative min-h-screen bg-gradient-to-r from-black via-indigo-800 via-blue-800 to-black
+ overflow-hidden">
       {/* Optional dark overlay for better readability */}
       <div className="absolute inset-0 bg-black bg-opacity-30 sm:bg-opacity-20 z-10"></div>
 
@@ -54,7 +55,7 @@ function App() {
               <Route path="/previous-papers" element={<PreviousPapers />} />
               <Route path="/interview-tips" element={<InterviewTips />} />
               <Route path="/how-to-apply" element={<HowToApply />} />
-              <Route path="/contact" element={<Contact />} />
+              <Route path="/contact" element={<ContactUs />} />
               <Route path="/faqs" element={<FAQs />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms" element={<Terms />} />

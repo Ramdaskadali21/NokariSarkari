@@ -9,9 +9,9 @@ export default function HeroSection() {
           alt="Thinking illustration"
         />
         <div className="text-center md:text-center max-w-3xl">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl text-black">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl text-white">
             Get the Latest Naukri Sarkari
-            <span className="block font-bold text-gray-900 mt-1 relative">
+            <span className="block font-bold text-white mt-1 relative">
               Updates Instantly
               <svg
                 className="absolute -bottom-7 md:left-24 w-full h-4 md:h-5"
@@ -28,8 +28,8 @@ export default function HeroSection() {
               </svg>
             </span>
           </h1>
-          <p className="text-lg text-gray-700 mt-5">
-             Stay ahead with instant updates on government jobs, exams, and notifications delivered to you in real-time.
+          <p className="text-lg text-white mt-8">
+             Stay ahead with instant updates on government jobs, exams, and notifications delivered to you In real-time.
           </p>
         </div>
       </section>

@@ -1,14 +1,13 @@
 import HeroSection from './Components/HeroSection';
+import CardSlider from "./Components/CardSlider";
 const Home = () => {
   return ( 
     <>
       {/* other sections/components */}
       <HeroSection />
+       <CardSlider />
       {/* other sections/components */}
-      <div className="p-4">
-      <h1 className="text-2xl font-bold">Home Page</h1>
-      <p>Welcome to the Home page.</p>
-    </div>
+      
     </>
     
   );
