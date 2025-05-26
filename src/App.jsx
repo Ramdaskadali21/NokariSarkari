@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
 import FooterLinks from './components/FooterLinks';
@@ -29,8 +29,7 @@ import RefundPolicy from './pages/RefundPolicy';
 
 function App() {
   return (
-    <div className="relative min-h-screen bg-gradient-to-r from-black via-indigo-800 via-blue-800 to-black
- overflow-hidden">
+    <div className="relative min-h-screen bg-gradient-to-r from-black via-indigo-800 via-blue-800 to-black overflow-hidden">
       {/* Optional dark overlay for better readability */}
       <div className="absolute inset-0 bg-black bg-opacity-30 sm:bg-opacity-20 z-10"></div>
 
@@ -60,15 +59,9 @@ function App() {
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms" element={<Terms />} />
               <Route path="/refund-policy" element={<RefundPolicy />} />
-              <Route
-                path="*"
-                element={
-                  <div className="text-center text-white">
-                    <h2 className="text-2xl font-semibold mb-4">Page Not Found</h2>
-                    <p>Sorry, this page does not exist.</p>
-                  </div>
-                }
-              />
+              
+              {/* Redirect unknown routes to Home */}
+              <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           </main>
 
