@@ -11,7 +11,15 @@ const cards = [
   { tag: 'Marketing', image: designImg, title: 'Growth Hacking Tips', text: 'How to grow your startup fast and efficiently...' },
   { tag: 'Design', image: designImg, title: 'UX/UI Best Practices', text: 'Designing for accessibility and usability...' },
   { tag: 'Development', image: designImg, title: 'React 18 Features', text: 'What’s new in React 18 and how to use it...' },
+  { tag: 'De', image: designImg, title: 'React 18 Features', text: 'What’s new in React 18 and how to use it...' },
+  { tag: 'Dev', image: designImg, title: 'React 18 Features', text: 'What’s new in React 18 and how to use it...' },
+  { tag: 'Developnt', image: designImg, title: 'React 18 Features', text: 'What’s new in React 18 and how to use it...' },
+  { tag: 'Devement', image: designImg, title: 'React 18 Features', text: 'What’s new in React 18 and how to use it...' },
 ];
+
+// Helper flags for loop enabled
+const isLoopDesktop = cards.length > 3; // desktop slidesPerView=3, need >3
+const isLoopMobile = cards.length > 1;  // mobile slidesPerView=1, need >1
 
 export default function CardSlider() {
   return (
@@ -20,12 +28,12 @@ export default function CardSlider() {
         Latest Jobs
       </h2>
       <div className="max-w-[1100px] w-full px-4 relative">
-        
+
         {/* Desktop & Tablet slider (≥640px) */}
         <div className="hidden sm:block">
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
-            loop={true}
+            loop={isLoopDesktop}
             autoplay={{
               delay: 2000,
               disableOnInteraction: false,
@@ -68,11 +76,11 @@ export default function CardSlider() {
           </Swiper>
         </div>
 
-        {/* Mobile slider (<640px) - white background, non-overlapping layout */}
+        {/* Mobile slider (<640px) */}
         <div className="block sm:hidden mb-10">
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
-            loop={true}
+            loop={isLoopMobile}
             autoplay={{
               delay: 3000,
               disableOnInteraction: false,
@@ -82,7 +90,7 @@ export default function CardSlider() {
             navigation={true}
             spaceBetween={20}
             slidesPerView={1}
-            direction="vertical"
+            // Horizontal direction (default)
             className="!overflow-visible"
             style={{ padding: '0 20px' }}
           >
