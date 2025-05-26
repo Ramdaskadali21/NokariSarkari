@@ -1,17 +1,20 @@
 export default function HeroSection() {
   return (
-    <main className="mx-auto px-2 sm:px-2 lg:px-2 pb-2">
+    <main className="mx-auto px-4 sm:px-6 lg:px-8 pb-6">
+      <section className="mt-6 md:mt-12 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 max-w-6xl mx-auto">
         
-      <section className="mt-2 md:mt-4 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 max-w-6xl mx-auto">
+        {/* Illustration */}
         <img
-          className="w-24 md:w-28"
+          className="w-20 sm:w-24 md:w-28"
           src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/hero/thinkingImage.svg"
           alt="Thinking illustration"
         />
-        <div className="text-center md:text-center max-w-3xl">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl text-white">
+
+        {/* Text Content */}
+        <div className="text-center md:text-left max-w-3xl px-2">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-semibold text-white leading-tight">
             Get the Latest Naukri Sarkari
-            <span className="block font-bold text-white mt-1 relative">
+            <span className="block font-extrabold text-white mt-2 relative">
               Updates Instantly
               <svg
                 className="absolute -bottom-7 md:left-24 w-full h-4 md:h-5"
@@ -28,12 +31,12 @@ export default function HeroSection() {
               </svg>
             </span>
           </h1>
-          <p className="text-lg text-white mt-8">
-             Stay ahead with instant updates on government jobs, exams, and notifications delivered to you In real-time.
+
+          <p className="text-base sm:text-lg text-white mt-6 md:mt-8 leading-relaxed max-w-xl mx-auto md:mx-0">
+            Stay ahead with instant updates on government jobs, exams, and notifications delivered to you in real-time.
           </p>
         </div>
       </section>
     </main>
-      
   );
 }
