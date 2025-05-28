@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 
-const LatestUpades = () => {
+const LatestUpdates = () => {
   // Sample data with 15 updates
   const allUpdates = Array.from({ length: 15 }, (_, i) => ({
     id: i + 1,
@@ -48,4 +48,4 @@ const LatestUpades = () => {
   );
 };
 
-export default LatestUpades;
+export default LatestUpdates;
