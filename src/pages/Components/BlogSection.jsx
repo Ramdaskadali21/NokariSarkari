@@ -106,6 +106,20 @@ const BlogSection = () => {
             </div>
           </div>
         </a>
+          {/* Divider */}
+        <div className="border-b border-slate-700/60"></div>
+
+        {/* View All Blog Button */}
+        <div className="flex justify-center mt-10">
+          <a
+            href="/blogs" // Update this to your actual blog route
+            className="group block rounded-xl p-4 transition-all duration-300 bg-slate-800 border border-blue-900/20 hover:border-blue-400/40 text-center w-full sm:w-auto max-w-xs"
+          >
+            <span className="text-white font-semibold group-hover:text-blue-400 transition-colors">
+              View All Blog
+            </span>
+          </a>
+        </div>
       </div>
     </div>
   );

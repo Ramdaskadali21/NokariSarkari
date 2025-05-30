@@ -29,7 +29,7 @@ import RefundPolicy from './pages/RefundPolicy';
 
 function App() {
   return (
-    <div className="relative min-h-screen bg-gradient-to-r from-purple-900 to-blue-900 overflow-hidden">
+    <div className="relative min-h-screen bg-gradient-to-br from-gray-900 via-slate-900 to-neutral-800 overflow-hidden">
       {/* Optional dark overlay for better readability */}
       <div className="absolute inset-0 bg-black bg-opacity-30 sm:bg-opacity-20 z-10"></div>
 

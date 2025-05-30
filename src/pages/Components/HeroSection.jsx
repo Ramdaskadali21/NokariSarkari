@@ -2,41 +2,56 @@ export default function HeroSection() {
   return (
     <main className="mx-auto px-4 sm:px-6 lg:px-8 pb-6">
       <section className="mt-6 md:mt-12 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 max-w-6xl mx-auto">
-        
-        {/* Illustration */}
-        <img
-          className="w-20 sm:w-24 md:w-28"
-          src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/hero/thinkingImage.svg"
-          alt="Thinking illustration"
-        />
+       <div className="">
+      <div className="max-w-4xl mx-auto text-center">
+        <h1 className="text-4xl sm:text-5xl font-bold mb-4">
+          Find Your Dream Government Job
+        </h1>
+        <p className="text-lg sm:text-xl text-blue-100 mb-8">
+          Latest Sarkari Naukri Updates – Stay Ahead in Your Career
+        </p>
 
-        {/* Text Content */}
-        <div className="text-center md:text-left max-w-3xl px-2">
-          <h1 className="text-2xl sm:text-3xl md:text-5xl font-semibold text-white leading-tight">
-            Get the Latest Naukri Sarkari
-            <span className="block font-extrabold text-white mt-2 relative">
-              Updates Instantly
-              <svg
-                className="absolute -bottom-7 md:left-24 w-full h-4 md:h-5"
-                width="370"
-                height="26"
-                viewBox="0 0 370 26"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="m310.521 0 2.587.002A13492 13492 0 0 0 323.855 0h19.555a693 693 0 0 1 2.536 0 149 149 0 0 1 1.137 0c.908-.004 1.817.09 2.677.399l.136.044c.753.26 1.278.717 1.65 1.427.339.792.36 1.606.079 2.42-.294.692-.804 1.159-1.4 1.586l.062.191c.03.449.03.449-.062.636q-.021.18-.038.36c-.112 1.19-.112 1.19-.466 1.548a47 47 0 0 0 1.997-.144l.261-.024.134-.012.137-.012.138-.012c1.731-.155 3.462-.287 5.198-.384l.141-.008a249 249 0 0 1 3.307-.167l.144-.007a31 31 0 0 0 3.236-.346c.941-.125 1.943-.074 2.877.083l.182.03c.828.155 1.511.558 2.004 1.258.316.558.528 1.055.523 1.7l-.001.155c-.017.84-.342 1.498-.935 2.085-.285.241-.61.404-.94.575l-.222.118-.436.228q-.226.117-.451.238c-.779.409-1.592.748-2.397 1.1q-.532.235-1.059.478-.651.3-1.319.554a2 2 0 0 0-.439.273c-.805.464-1.674.784-2.538 1.118q-.34.135-.679.276l-.218.09q-.202.083-.405.17c-.825.333-1.531.21-2.326-.127-.565-.275-.968-.633-1.206-1.227-.235-.784-.23-1.48.137-2.208l-.246.024a93 93 0 0 1-2.759.215l-.472.031-1.141.076-1.066.07-.272.018-2.541.167-2.303.152-3.714.246c-2.66.176-5.318.323-7.983.4l-.342.01-.177.005-1.581.048-.433.013q-2.9.09-5.799.187l-1.077.036q-3.363.11-6.727.228c-4.201.147-8.401.29-12.604.36l-.717.012q-2.764.047-5.529.092-4.497.072-8.993.152c-6.01.107-12.02.211-37.532.607l-1.068.016-13.392.201-.143.003-8.4.122-2.108.03-.297.004-1.177.017-3.107.044c-5.25.073-5.25.073-10.497.21q-1.108.034-2.218.052-1.58.03-3.159.08a448 448 0 0 1-5.714.138q-5.798.105-11.594.26l-2.153.057-.822.021-.207.006-1.471.038-5.908.155-.211.005-2.345.06-2.614.069-.442.011-.667.017-2.25.059-9.585.248-.734.019-19.831.515-2.552.066-4.037.105-.992.026-.47.012-.613.016-1.473.038-.577.015-.143.004a1495 1495 0 0 1-3.94.1c-1.695.04-3.385.123-5.078.232a435 435 0 0 1-2.599.157c-2.106.122-4.212.211-6.319.295l-.435.018-2.516.1q-3.418.136-6.837.286l-.48.021c-5.52.24-11.041.49-17.986.83l-.128.006-1.412.07-.65.033a3475 3475 0 0 1-13.32.63q-5.401.25-10.806.497c-8.41.379-8.41.379-27.883 1.502l-4.462.282-.391.024-.194.012-.77.049-.382.023-2.582.163-1.027.065-.797.05c-3.025.19-3.025.19-3.848.198l-.213.006c-.798.006-1.395-.26-1.993-.789-.569-.572-.855-1.277-.89-2.085.022-.51.188-.95.386-1.413l-.17-.006a464 464 0 0 1-2.396-.088l-1.085-.04a45 45 0 0 1-.661-.026c-.32-.045-.526-.146-.745-.384a1.3 1.3 0 0 1-.102-.855.84.84 0 0 1 .487-.451c.217-.061.422-.09.645-.114l.13-.013.431-.044.312-.032 1.577-.16 2.365-.238.622-.063a546 546 0 0 1 10.535-.978l.783-.064 1.116-.09.292-.024c3.35-.271 6.7-.57 10.048-.863l1.953-.171.557-.049.138-.012a8812 8812 0 0 0 11.614-1.022l.135-.012c5.504-.485 11.012-.93 17.808-1.477l2.434-.196.243-.02c1.926-.156 3.85-.32 5.774-.511 2.06-.204 4.122-.375 6.185-.547l.138-.011 3.9-.322.721-.06a3168 3168 0 0 1 5.819-.47l.226-.017c2.67-.208 5.34-.394 8.013-.568l1.807-.118.713-.046.184-.012 1.932-.127 9.012-.59.723-.048.144-.01 2.112-.138a1669 1669 0 0 0 15.074-1.046l.928-.068.439-.032.616-.045.202-.015q.486-.035.971-.077a63 63 0 0 1 3.203-.178l1.272-.05.5-.018a739 739 0 0 0 3.903-.163l2.057-.089 1.098-.048 3.092-.134.197-.008.395-.017.197-.009.198-.008 2.951-.128a2202 2202 0 0 0 16.832-.773 1562 1562 0 0 1 5.053-.18c3.208-.113 6.417-.237 9.623-.375l2.284-.112a1012 1012 0 0 0 11.34-.66l.729-.044.214-.013.73-.048c.548-.034 1.102-.063 1.654-.08Z"
-                  fill="#FF7A3B"
-                />
-              </svg>
-            </span>
-          </h1>
+        {/* Search Bar */}
+        <form className="max-w-xl mx-auto flex gap-2">
+          <input
+            type="text"
+            name="search"
+            placeholder="Search jobs, exams, or sectors"
+            className="w-full px-4 py-3 rounded-lg text-black focus:outline-none"
+          />
+          <button
+            type="submit"
+            className="bg-yellow-400 text-black font-semibold px-6 py-3 rounded-lg hover:bg-yellow-300"
+          >
+            Search
+          </button>
+        </form>
 
-          <p className="text-base sm:text-lg text-white mt-6 md:mt-8 leading-relaxed max-w-xl mx-auto md:mx-0">
-            Stay ahead with instant updates on government jobs, exams, and notifications delivered to you in real-time.
-          </p>
+        {/* Category Buttons */}
+        <div className="mt-10 flex flex-wrap justify-center gap-3">
+          {[
+            'Govt Jobs',
+            'Defence',
+            'Banking',
+            'Teaching',
+            'PSU',
+            'Railway',
+            'Police',
+            'SSC',
+            'UPSC',
+          ].map((category) => (
+            <button
+              key={category}
+              className="bg-white text-blue-800 font-medium px-4 py-2 rounded-full hover:bg-blue-100 transition"
+            >
+              {category}
+            </button>
+          ))}
         </div>
+      </div>
+    </div>
       </section>
+      
     </main>
   );
 }
