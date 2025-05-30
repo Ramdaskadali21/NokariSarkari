@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import FooterLinks from './components/FooterLinks';
 import ScrollToTop from './components/ScrollToTop';
+import CookieConsent from './components/CookieConsent'; // ← Import it
 
 import './index.css';
 
@@ -38,6 +39,7 @@ function App() {
         <BrowserRouter>
           <ScrollToTop />
           <Navbar />
+            <CookieConsent />
 
           <main className="max-w-7xl mx-auto px-4 sm:px-6 py-6 min-h-[70vh] text-white">
             <Routes>
@@ -59,6 +61,7 @@ function App() {
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms" element={<Terms />} />
               <Route path="/refund-policy" element={<RefundPolicy />} />
+              
               
               {/* Redirect unknown routes to Home */}
               <Route path="*" element={<Navigate to="/" />} />
