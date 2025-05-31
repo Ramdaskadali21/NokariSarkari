@@ -72,10 +72,10 @@ const FAQs = () => {
       
       <div className="grid md:grid-cols-5 gap-8">
         <div className="md:col-span-2">
-          <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-2">
+          <h2 className="text-3xl font-bold  dark:text-white text-white mb-2">
             Frequently Asked Questions
           </h2>
-          <p className="text-gray-600 dark:text-gray-400">
+          <p className="text-gray-200 dark:text-gray-400">
             Answers to the most commonly asked questions about Sarkari Nokari – eligibility, applications, and exam tips.
           </p>
         </div>
