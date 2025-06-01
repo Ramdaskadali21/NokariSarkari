@@ -7,7 +7,7 @@ import CardCarousel from './Components/CardCarousel';
 
 const Home = () => {
   return (
-    <div className="bg-slate-900 min-h-screen text-white">
+    <div className="min-h-screen text-white">
       
       {/* Hero Section */}
       <section className="pt-6 pb-4 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
@@ -16,6 +16,11 @@ const Home = () => {
     
       {/* Latest Jobs */}
       <section className="pt-6 pb-4 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="border-b border-slate-700 pb-3">
+        <h2 className="text-2xl sm:text-3xl font-bold text-white">
+                Latest Job Openings
+              </h2>
+              </div>
         <div>
           <CardCarousel />
         </div>
