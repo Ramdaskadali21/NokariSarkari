@@ -67,44 +67,50 @@ const FAQs = () => {
   };
 
   return (
-     <div className="group block rounded-xl p-4 transition-all duration-300 bg-slate-800 border border-blue-900/20 hover:border-blue-400/40 py-12 px-4 sm:px-6 lg:px-8">
-    <section className="max-w-6xl mx-auto px-4 py-10 sm:px-6 lg:px-8">
-      
-      <div className="grid md:grid-cols-5 gap-8">
-        <div className="md:col-span-2">
-          <h2 className="text-3xl font-bold  dark:text-white text-white mb-2">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-gray-200 dark:text-gray-400">
-            Answers to the most commonly asked questions about Sarkari Nokari – eligibility, applications, and exam tips.
-          </p>
-        </div>
+    <div className="group block rounded-xl bg-slate-800 border border-blue-900/20 hover:border-blue-400/40
+                    p-6 sm:p-8 lg:p-12 transition-all duration-300">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+          {/* Left side: Heading and description */}
+          <div className="md:col-span-2">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-gray-300 text-sm sm:text-base">
+              Answers to the most commonly asked questions about Sarkari Nokari – eligibility, applications, and exam tips.
+            </p>
+          </div>
 
-        <div className="md:col-span-3">
-          <div className="space-y-6">
+          {/* Right side: FAQ accordion */}
+          <div className="md:col-span-3 space-y-6">
             {faqs.map((faq, index) => (
-              <div key={index} className="border-b pb-6">
+              <div key={index} className="border-b border-blue-700 pb-6">
                 <button
                   onClick={() => toggleAccordion(index)}
-                  className="flex justify-between w-full text-left text-lg font-semibold text-blue-900 dark:text-white focus:outline-none"
+                  className="flex justify-between items-center w-full text-left text-lg sm:text-xl font-semibold
+                             text-blue-900 dark:text-white focus:outline-none"
+                  aria-expanded={openIndex === index}
+                  aria-controls={`faq-${index}`}
                 >
                   {faq.question}
-                  <span>{openIndex === index ? '−' : '+'}</span>
+                  <span className="text-2xl select-none">{openIndex === index ? '−' : '+'}</span>
                 </button>
+
                 {openIndex === index && (
-                  <div className="mt-3 space-y-2">
-                    <p className="text-gray-700 dark:text-gray-300">{faq.answer}</p>
-                    <p className="text-sm text-gray-500 dark:text-gray-400 italic">
-                      {faq.extra}
-                    </p>
+                  <div
+                    id={`faq-${index}`}
+                    className="mt-4 space-y-3 text-gray-300 text-sm sm:text-base italic"
+                  >
+                    <p>{faq.answer}</p>
+                    <p className="text-gray-400">{faq.extra}</p>
                   </div>
                 )}
               </div>
             ))}
           </div>
         </div>
-      </div>
-    </section></div>
+      </section>
+    </div>
   );
 };
 

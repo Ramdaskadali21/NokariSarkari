@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 
 const Terms = () => {
   return (
-    <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto text-white">
+    <div
+      role="main"
+      className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto text-white"
+    >
       <div className="max-w-2xl lg:max-w-5xl mx-auto">
         <div className="text-center">
           <h1 className="text-3xl font-bold text-white sm:text-4xl">
@@ -62,7 +65,10 @@ const Terms = () => {
             <h2 className="text-white font-semibold text-lg mb-2">7. Contact Information</h2>
             <p>
               For questions regarding these terms, please visit our{' '}
-              <Link to="/contact" className="text-blue-400 hover:text-blue-300 underline">
+              <Link
+                to="/contact"
+                className="text-blue-400 hover:text-blue-300 underline focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+              >
                 Contact Us
               </Link>{' '}
               page.

@@ -6,10 +6,10 @@ const PrivacyPolicy = () => {
     <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto text-white">
       <div className="max-w-2xl lg:max-w-5xl mx-auto">
         <div className="text-center">
-          <h1 className="text-3xl font-bold text-white sm:text-4xl">
+          <h1 className="text-3xl font-bold sm:text-4xl">
             Privacy Policy
           </h1>
-          <p className="mt-1 text-neutral-400">
+          <p className="mt-1 text-neutral-400 text-sm sm:text-base">
             Learn how NokariSarkari handles your personal information responsibly.
           </p>
         </div>

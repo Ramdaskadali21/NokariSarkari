@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import FooterLinks from './components/FooterLinks';
 import ScrollToTop from './components/ScrollToTop';
-import CookieConsent from './components/CookieConsent'; // ← Import it
+import CookieConsent from './components/CookieConsent';
 
 import './index.css';
 
@@ -31,17 +31,19 @@ import RefundPolicy from './pages/RefundPolicy';
 function App() {
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-gray-900 via-slate-900 to-neutral-800 overflow-hidden">
-      {/* Optional dark overlay for better readability */}
-      <div className="absolute inset-0 bg-black bg-opacity-30 sm:bg-opacity-20 z-10"></div>
+      
+      {/* Optional overlay for better readability */}
+      <div className="absolute inset-0 bg-black bg-opacity-40 sm:bg-opacity-30 lg:bg-opacity-20 z-10 transition-all duration-300"></div>
 
       {/* Main Site Content */}
       <div className="relative z-20">
         <BrowserRouter>
           <ScrollToTop />
           <Navbar />
-            <CookieConsent />
+          <CookieConsent />
 
-          <main className="max-w-7xl mx-auto px-4 sm:px-6 py-6 min-h-[70vh] text-white">
+          {/* Page Container */}
+          <main className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 py-6 min-h-[70vh] text-white transition-all duration-300">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/latest-jobs" element={<LatestJobs />} />
@@ -61,9 +63,8 @@ function App() {
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms" element={<Terms />} />
               <Route path="/refund-policy" element={<RefundPolicy />} />
-              
-              
-              {/* Redirect unknown routes to Home */}
+
+              {/* Catch-all redirect */}
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           </main>

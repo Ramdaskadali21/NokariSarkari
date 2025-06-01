@@ -1,13 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const ContactUs = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    details: '',
+  });
+
+  const handleChange = (e) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Here you can send formData to backend or API
+    console.log('Form submitted:', formData);
+    alert('Form submitted! (Implement actual submission logic)');
+    // Optionally reset form after submit
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      details: '',
+    });
+  };
+
   return (
     <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto text-white">
       <div className="max-w-2xl lg:max-w-5xl mx-auto">
         <div className="text-center">
-          <h1 className="text-3xl font-bold text-white sm:text-4xl">
-            Contact us
-          </h1>
+          <h1 className="text-3xl font-bold text-white sm:text-4xl">Contact us</h1>
           <p className="mt-1 text-neutral-400">
             We'd love to talk about how we can help you.
           </p>
@@ -16,37 +44,53 @@ const ContactUs = () => {
         <div className="mt-12 grid items-start lg:grid-cols-2 gap-6 lg:gap-16">
           {/* Contact Form Card */}
           <div className="flex flex-col border border-slate-700 rounded-xl bg-slate-800 p-6 lg:p-8 hover:border-blue-500 transition-all duration-300">
-            <h2 className="mb-8 text-xl font-semibold text-white">
-              Fill in the form
-            </h2>
-            <form>
+            <h2 className="mb-8 text-xl font-semibold text-white">Fill in the form</h2>
+            <form onSubmit={handleSubmit}>
               <div className="grid gap-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <input
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleChange}
                     type="text"
                     placeholder="First Name"
                     className="py-2.5 sm:py-3 px-4 w-full bg-slate-900 border border-slate-700 rounded-lg text-sm placeholder-neutral-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+                    required
                   />
                   <input
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleChange}
                     type="text"
                     placeholder="Last Name"
                     className="py-2.5 sm:py-3 px-4 w-full bg-slate-900 border border-slate-700 rounded-lg text-sm placeholder-neutral-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+                    required
                   />
                 </div>
 
                 <input
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   type="email"
                   placeholder="Email"
                   className="py-2.5 sm:py-3 px-4 w-full bg-slate-900 border border-slate-700 rounded-lg text-sm placeholder-neutral-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+                  required
                 />
 
                 <input
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
                   type="text"
                   placeholder="Phone Number"
                   className="py-2.5 sm:py-3 px-4 w-full bg-slate-900 border border-slate-700 rounded-lg text-sm placeholder-neutral-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
                 />
 
                 <textarea
+                  name="details"
+                  value={formData.details}
+                  onChange={handleChange}
                   rows="4"
                   placeholder="Details"
                   className="py-2.5 sm:py-3 px-4 w-full bg-slate-900 border border-slate-700 rounded-lg text-sm placeholder-neutral-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
@@ -71,7 +115,7 @@ const ContactUs = () => {
             {[
               {
                 title: 'Knowledgebase',
-                description: 'We\'re here to help with any questions or code.',
+                description: "We're here to help with any questions or code.",
                 link: '#',
                 linkText: 'Contact support',
                 icon: (
@@ -159,7 +203,7 @@ const ContactUs = () => {
                       fill="currentColor"
                       viewBox="0 0 16 16"
                     >
-                      <path d="M0.976 6.922c-.539 0-.976.42-.976.938 0 .518.437.938.976.938H12.77l-5.165 4.962a.75.75 0 1 0 1.05 1.072l6.658-6.396a.75.75 0 0 0 0-1.072L8.654.635a.75.75 0 1 0-1.05 1.072L12.77 6.922H0.976Z" />
+                      <path d="M0.976 6.922c-.539 0-.976.456-.976 1.02 0 .564.437 1.02.976 1.02h11.048l-3.342 3.273a1.068 1.068 0 0 0 0 1.52.92.92 0 0 0 1.293 0l5.085-4.97a1.041 1.041 0 0 0 .028-1.479l-5.078-4.97a.92.92 0 0 0-1.292 0 1.069 1.069 0 0 0 0 1.519l3.35 3.273z" />
                     </svg>
                   </a>
                 </div>

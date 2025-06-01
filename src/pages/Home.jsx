@@ -3,47 +3,56 @@ import LatestJobs from './Components/LatestJobs';
 import BlogSection from './Components/BlogSection';
 import LatestUpdates from './Components/LatestUpdates';
 import CurrentJobs from './Components/CurrentJobs';
+import CardCarousel from './Components/CardCarousel';
 
 const Home = () => {
   return (
-    <div className=""> {/* You can add some global spacing here if needed */}
+    <div className="bg-slate-900 min-h-screen text-white">
       
       {/* Hero Section */}
-      <section className="pt-2 pb-1 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="pt-6 pb-4 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <HeroSection />
       </section>
-
+    
       {/* Latest Jobs */}
-      <section className="pt-2 pb-1 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <h1>Coming soon</h1>
+      <section className="pt-6 pb-4 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div>
+          <CardCarousel />
+        </div>
       </section>
 
       {/* Current Jobs & Latest Updates */}
-      <section className="pt-2 pb-1 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
+      <section className="pt-6 pb-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="flex flex-col lg:flex-row gap-8">
           
           {/* Main Content */}
-          <div className="w-full lg:w-[70%] space-y-6">
-            <div className="border-b border-slate-200 pb-4">
-              <h2 className="text-2xl font-bold text-white">Current Job Openings</h2>
+          <div className="w-full lg:w-7/12 space-y-6">
+            <div className="border-b border-slate-700 pb-3">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white">
+                Current Job Openings
+              </h2>
             </div>
             <CurrentJobs />
           </div>
 
           {/* Sidebar Updates */}
-          <div className="w-full lg:w-[30%] space-y-6">
-            <div className="border-b border-slate-200 pb-4">
-              <h2 className="text-2xl font-bold text-white">Latest Updates</h2>
+          <aside className="w-full lg:w-5/12 space-y-6">
+            <div className="border-b border-slate-700 pb-3">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white">
+                Latest Updates
+              </h2>
             </div>
             <LatestUpdates />
-          </div>
+          </aside>
         </div>
       </section>
 
       {/* Blog Section */}
-      <section className="pt-2 pb-1 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="border-b border-slate-200 pb-4">
-          <h2 className="text-2xl font-bold text-white">Career Resources & Blogs</h2>
+      <section className="pt-6 pb-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="border-b border-slate-700 pb-3 mb-6">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white">
+            Career Resources & Blogs
+          </h2>
         </div>
         <BlogSection />
       </section>
