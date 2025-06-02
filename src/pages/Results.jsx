@@ -25,7 +25,7 @@ const resultsData = [
 
 const Results = () => {
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 bg-gray-900 rounded-lg shadow-lg">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 group rounded-xl border border-yellow-500 hover:border-red-700 shadow-lg">
       <h1 className="text-3xl sm:text-4xl font-bold mb-6 text-white text-center">
         Government Job Results
       </h1>

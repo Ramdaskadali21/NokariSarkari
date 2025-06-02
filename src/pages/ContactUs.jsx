@@ -43,7 +43,7 @@ const ContactUs = () => {
 
         <div className="mt-12 grid items-start lg:grid-cols-2 gap-6 lg:gap-16">
           {/* Contact Form Card */}
-          <div className="flex flex-col border border-slate-700 rounded-xl bg-slate-800 p-6 lg:p-8 hover:border-blue-500 transition-all duration-300">
+          <div className="flex flex-col border border-yellow-500 rounded-xl  p-6 lg:p-8 hover:border-red-600 transition-all duration-300">
             <h2 className="mb-8 text-xl font-semibold text-white">Fill in the form</h2>
             <form onSubmit={handleSubmit}>
               <div className="grid gap-4">
@@ -54,7 +54,7 @@ const ContactUs = () => {
                     onChange={handleChange}
                     type="text"
                     placeholder="First Name"
-                    className="py-2.5 sm:py-3 px-4 w-full bg-slate-900 border border-slate-700 rounded-lg text-sm placeholder-neutral-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+                    className="py-2.5 sm:py-3 px-4 w-full  border border-red-700 rounded-lg text-sm placeholder-neutral-500 focus:border-pink-700 focus:ring-1 focus:ring-blue-500"
                     required
                   />
                   <input

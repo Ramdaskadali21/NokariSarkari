@@ -3,7 +3,7 @@ import React from 'react';
 const AboutUs = () => {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <div className="group rounded-xl p-6 sm:p-8 bg-slate-800 border border-blue-900/20 hover:border-blue-400/40 shadow-lg transition-all duration-300">
+      <div className="group rounded-xl p-6 sm:p-8  border border-yellow-500 hover:border-red-700 shadow-lg transition-all duration-300">
         
         {/* Profile Section */}
         <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">

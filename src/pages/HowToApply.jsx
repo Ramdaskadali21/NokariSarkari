@@ -2,7 +2,7 @@ import React from "react";
 
 const HowToApply = () => {
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16 text-white">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16 text-white group rounded-xl border border-yellow-500 hover:border-red-700">
       <div className="text-center mb-10">
         <h1 className="text-3xl sm:text-4xl font-extrabold mb-4">
           How to Apply for Government Exams
@@ -13,7 +13,7 @@ const HowToApply = () => {
       </div>
 
       <div className="space-y-8 text-sm sm:text-base text-neutral-300 leading-relaxed">
-        <div className="bg-slate-800 border border-slate-700 rounded-xl p-6 hover:border-blue-500 transition-all duration-300">
+        <div className=" border border-slate-700 rounded-xl p-6 hover:border-blue-500 transition-all duration-300">
           <h2 className="text-white font-semibold text-lg mb-2">1. Check Eligibility</h2>
           <p>
             Read the official notification carefully to ensure you meet the age, educational qualification, and other eligibility criteria.

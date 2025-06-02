@@ -26,8 +26,8 @@ const jobs = [
 
 const LatestJobs = () => {
   return (
-    <div className="p-4 max-w-4xl mx-auto">
-      <h1 className="text-2xl sm:text-3xl font-bold mb-4 text-gray-900 dark:text-white">
+    <div className="p-4 max-w-4xl mx-auto group rounded-xl border border-yellow-500 hover:border-red-700">
+      <h1 className="text-2xl sm:text-3xl font-bold mb-4 text-white dark:text-white">
         Latest Jobs
       </h1>
       <p className="text-gray-700 dark:text-gray-300 text-base sm:text-lg mb-6">

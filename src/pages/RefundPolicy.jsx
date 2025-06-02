@@ -1,7 +1,7 @@
 import React from "react";
 
 const RefundPolicy = () => (
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center group rounded-xl border border-yellow-500 hover:border-red-700">
     <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
       Refund Policy
     </h1>

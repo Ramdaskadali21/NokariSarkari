@@ -2,7 +2,7 @@ import React from "react";
 
 const InterviewTips = () => {
   return (
-    <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+    <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto group rounded-xl border border-yellow-500 hover:border-red-700">
       <div className="space-y-8">
         {/* Tip Card 1 */}
         <div className="block rounded-xl p-4 bg-slate-800 border border-blue-900/20">
@@ -30,7 +30,7 @@ const InterviewTips = () => {
         </div>
 
         {/* Tip Card 2 */}
-        <div className="block rounded-xl p-4 bg-slate-800 border border-blue-900/20">
+        <div className="block rounded-xl p-4  border border-blue-900/20">
           <div className="flex flex-col sm:flex-row sm:items-center gap-5">
             <div className="shrink-0 relative rounded-xl overflow-hidden w-full sm:w-56 h-44">
               <img

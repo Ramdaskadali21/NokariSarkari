@@ -84,7 +84,7 @@ const Syllabus = () => {
     relatedLinksData[selectedSubExam] || [{ text: "No related links available", href: "#" }];
 
   return (
-    <div className="max-w-full min-h-screen bg-slate-900 text-white font-sans p-4 md:p-8 flex flex-col md:flex-row gap-4">
+    <div className="max-w-full min-h-screen  text-white font-sans p-4 md:p-8 flex flex-col md:flex-row gap-4 group rounded-xl border border-yellow-500 hover:border-red-700">
       
       {/* Mobile Dropdown for Categories */}
       <div className="md:hidden w-full">
@@ -96,7 +96,7 @@ const Syllabus = () => {
         </label>
         <select
           id="category-select"
-          className="w-full rounded-lg bg-slate-800 border border-blue-700 text-white p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none pr-10 relative"
+          className="w-full rounded-lg  border border-yellow-500 text-white p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none pr-10 relative"
           value={selectedCategory}
           onChange={(e) => {
             const cat = e.target.value;

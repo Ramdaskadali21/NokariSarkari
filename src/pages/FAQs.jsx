@@ -67,7 +67,7 @@ const FAQs = () => {
   };
 
   return (
-    <div className="group block rounded-xl bg-slate-800 border border-blue-900/20 hover:border-blue-400/40
+    <div className="group block rounded-xl border border-yellow-500 hover:border-red-700
                     p-6 sm:p-8 lg:p-12 transition-all duration-300">
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8">

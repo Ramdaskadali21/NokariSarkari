@@ -30,7 +30,7 @@ const AdmitCards = () => {
         ].map((exam, index) => (
           <div
             key={index}
-            className="border border-slate-700 rounded-xl bg-slate-800 p-6 hover:border-blue-500 transition-all duration-300"
+            className="border border-yellow-500 rounded-xl  p-6 hover:border-red-600 transition-all duration-300"
           >
             <h3 className="text-lg font-semibold text-white mb-2">
               {exam.title}

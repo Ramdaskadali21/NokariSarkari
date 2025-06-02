@@ -33,7 +33,7 @@ import RefundPolicy from './pages/RefundPolicy';
 
 function App() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-black">
+    <div className="relative min-h-screen overflow-hidden bg-black text-white">
       {/* Video Background */}
       <div className="fixed top-0 left-0 w-full h-full z-0 overflow-hidden">
         <video

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const PrivacyPolicy = () => {
   return (
-    <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto text-white">
+    <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto text-white group rounded-xl border border-yellow-500 hover:border-red-700">
       <div className="max-w-2xl lg:max-w-5xl mx-auto">
         <div className="text-center">
           <h1 className="text-3xl font-bold sm:text-4xl">

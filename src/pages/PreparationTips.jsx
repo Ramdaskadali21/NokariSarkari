@@ -47,8 +47,8 @@ const preparationTips = [
 
 const PreparationTips = () => {
   return (
-    <main className="min-h-screen bg-gray-50 dark:bg-gray-900 p-8">
-      <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-lg p-10">
+    <main className="min-h-screen p-8">
+      <div className="max-w-4xl mx-auto rounded-xl shadow-lg p-10 group  border border-yellow-500 hover:border-red-700">
         <h1 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white text-center">
           Preparation Tips for Government Exams
         </h1>
