@@ -7,7 +7,6 @@ import ScrollToTop from './components/ScrollToTop';
 import CookieConsent from './components/CookieConsent';
 
 import './index.css';
-
 // Page imports
 import Home from './pages/Home';
 import LatestJobs from './pages/LatestJobs';
@@ -30,9 +29,20 @@ import RefundPolicy from './pages/RefundPolicy';
 
 function App() {
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-gray-900 via-slate-900 to-neutral-800 overflow-hidden">
-      
-      {/* Optional overlay for better readability */}
+    <div className="relative min-h-screen overflow-hidden">
+      {/* Video Background - Fixed */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover z-0"
+      >
+        <source src="/bg-video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* Overlay for content readability */}
       <div className="absolute inset-0 bg-black bg-opacity-40 sm:bg-opacity-30 lg:bg-opacity-20 z-10 transition-all duration-300"></div>
 
       {/* Main Site Content */}
