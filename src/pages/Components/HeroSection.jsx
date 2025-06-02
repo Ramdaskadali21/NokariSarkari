@@ -1,14 +1,11 @@
 import React from 'react';
-import bgImage from './redfortt.jpg';
+
 
 const HeroSection = () => {
   return (
     <div className="relative w-full overflow-hidden rounded-xl border border-blue-900/20 hover:border-blue-400/40 py-16 px-4">
       {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${bgImage})` }}
-      ></div>
+      
 
       {/* Black Overlay */}
       <div className="absolute inset-0 "></div>

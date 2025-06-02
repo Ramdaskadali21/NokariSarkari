@@ -7,6 +7,10 @@ import ScrollToTop from './components/ScrollToTop';
 import CookieConsent from './components/CookieConsent';
 
 import './index.css';
+
+// Import video background from assets folder
+import bgVideo from './assets/a.mp4';
+
 // Page imports
 import Home from './pages/Home';
 import LatestJobs from './pages/LatestJobs';
@@ -29,31 +33,32 @@ import RefundPolicy from './pages/RefundPolicy';
 
 function App() {
   return (
-    <div className="relative min-h-screen overflow-hidden">
-      {/* Video Background - Fixed */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
-      >
-        <source src="/bg-video.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+    <div className="relative min-h-screen overflow-hidden bg-black">
+      {/* Video Background */}
+      <div className="fixed top-0 left-0 w-full h-full z-0 overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto object-cover transform -translate-x-1/2 -translate-y-1/2"
+          src={bgVideo}
+        >
+          Your browser does not support the video tag.
+        </video>
+      </div>
 
-      {/* Overlay for content readability */}
-      <div className="absolute inset-0 bg-black bg-opacity-40 sm:bg-opacity-30 lg:bg-opacity-20 z-10 transition-all duration-300"></div>
+      {/* Overlay for readability */}
+      <div className="fixed inset-0 bg-black bg-opacity-40 z-10"></div>
 
-      {/* Main Site Content */}
+      {/* Main site content */}
       <div className="relative z-20">
         <BrowserRouter>
           <ScrollToTop />
           <Navbar />
           <CookieConsent />
 
-          {/* Page Container */}
-          <main className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 py-6 min-h-[70vh] text-white transition-all duration-300">
+          <main className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 py-6 min-h-[70vh] text-white">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/latest-jobs" element={<LatestJobs />} />
