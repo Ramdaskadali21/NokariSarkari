@@ -9,7 +9,7 @@ import CookieConsent from './components/CookieConsent';
 import './index.css';
 
 // Import video background from assets folder
-import bgVideo from './assets/a.mp4';
+import bgVideo from './assets/A.mp4';
 
 // Page imports
 import Home from './pages/Home';
